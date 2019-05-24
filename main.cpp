@@ -57,53 +57,39 @@ int main(int argc, char *argv[])
     printf("\n== tree info: \n");
     bstree_show(root);
 
-    int j = 0;
-    printf("\n== find successor data index: ");
-    scanf("%d", &j);
-    if (j < 0 || j >= count)
-    {
-        j = 0;
-    }
+    int key = 0;
+    printf("\n== find successor key: ");
+    scanf("%d", &key);
     
-    node = bstree_search(root, data[j]);
+    node = bstree_search(root, key);
     successor = bstree_successor(node);
     if (successor != NULL)
     {
-        printf("data[%d] %d successor: %d\n", j, data[j], successor->key);
+        printf("%d successor: %d\n", key, successor->key);
     }
     else
     {
-        printf("data[%d] %d successor: null\n", j, data[j]);
+        printf("%d successor: null\n", key);
     }
 
-    int k = 0;
-    printf("\n== find predecessor data index: ");
-    scanf("%d", &k);
-    if (k < 0 || k >= count)
-    {
-        k = 0;
-    }
+    printf("\n== find predecessor key: ");
+    scanf("%d", &key);
     
-    node = bstree_search(root, data[k]);
+    node = bstree_search(root, key);
     predecessor = bstree_predecessor(node);
     if (predecessor != NULL)
     {
-        printf("data[%d] %d predecessor: %d\n", k, data[k], predecessor->key);
+        printf("%d predecessor: %d\n", key, predecessor->key);
     }
     else
     {
-        printf("data[%d] %d predecessor: null\n", k, data[k]);
+        printf("%d predecessor: null\n", key);
     }
 
-    int i = 0;
-    printf("\n== delete node data index: ");
-    scanf("%d", &i);
-    if (i < 0 || i >= count)
-    {
-        i = 0;
-    }
-    root = bstree_delete(root, data[i]);
-    printf("delete node %d\n", data[i]);
+    printf("\n== delete node key: ");
+    scanf("%d", &key);
+    root = bstree_delete(root, key);
+    printf("delete node %d\n", key);
 
     printf("\n== tree info: \n");
     bstree_show(root);
@@ -114,5 +100,6 @@ int main(int argc, char *argv[])
 
     // destory tree
     bstree_destroy(root);
+    return 0;
 }
 
