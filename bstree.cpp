@@ -54,7 +54,7 @@ int bstree_depth(bs_tree_t tree)
     
     depth_l = bstree_depth(tree->left);
     depth_r = bstree_depth(tree->right);
-    return depth_l > depth_r ? (depth_l + 1) : (depth_r + 1);
+    return max(depth_l, depth_r) + 1;
 }
 
 /* Ç°Ğò±éÀú"¶ş²æÊ÷" */
