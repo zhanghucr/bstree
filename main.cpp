@@ -20,6 +20,9 @@ int main(int argc, char *argv[])
     if (argc != 2)
     {
         printf("CMD <count>.\n");
+        printf("Example.\n");
+        printf("CMD 6\n");
+        printf("Then input data like 7, 5, 4, 3, 2, 6\n");
         return -1;
     }
 
@@ -46,7 +49,7 @@ int main(int argc, char *argv[])
     printf("\n== post-order: ");
     bstree_traverse_postorder(root);
 
-    printf("\n== breadth-order: ");
+    printf("\n== breadth: ");
     bstree_traverse_breadth(root);
 
     printf("\n== max: %d\n", bstree_minimum(root)->key);
