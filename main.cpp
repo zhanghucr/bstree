@@ -46,10 +46,7 @@ int main(int argc, char *argv[])
     printf("\n== post-order: ");
     bstree_traverse_postorder(root);
 
-    printf("\n== post-order: ");
-    bstree_traverse_postorder(root);
-
-    printf("\n== breadth: ");
+    printf("\n== breadth-order: ");
     bstree_traverse_breadth(root);
 
     printf("\n== max: %d\n", bstree_minimum(root)->key);
